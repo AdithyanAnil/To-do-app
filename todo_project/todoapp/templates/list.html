@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'lisst.css'%}">
+<br><br><br><br><br>
+<div class="container">
+    <div class="row">
+        {% for lst in do_list %}
+        <div class="col-lg-4">
+            
+            <div class="card card-margin">
+                <div class="card-header no-border" style="background-color: #12A98B">
+                    
+                    <h5 class="card-title " style="color:white">
+                          {{lst.title}}</h5>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="widget-49">
+                        <div class="widget-49-title-wrapper">
+                            {% comment %} <div class="widget-49-date-primary">
+                                <span class="widget-49-date-day">09</span>
+                                <span class="widget-49-date-month">apr</span>
+                            </div> {% endcomment %}
+                            <div class="widget-49-meeting-info">
+                                {% comment %} <span class="widget-49-pro-title">listttt</span>
+                                <span class="widget-49-meeting-time">time</span> {% endcomment %}
+                                
+                                
+                            </div>
+                            
+                        </div>
+                        <br>
+                        <p>{{lst.desc}}</p>
+                        
+                    </div>
+                    <a href="{% url 'edit' lst.id %}"><button class="btn btn-primary">Update</button></a>
+                    <a href="{% url 'delete' lst.id %}"><button class="btn btn-danger">Delete</button></a>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+        
+    </div>
+    </div>
+{% endblock content %}

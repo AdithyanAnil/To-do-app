@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+
+<style>
+    #mi_box{
+        height:300px;
+
+    }
+</style>
+
+<section class="pt-30px text-center" id="home" style=margin-top:20px >
+    <div class="container">
+        <div class="row align-items-center">
+<form method='POST'>
+{% csrf_token %}
+<section class="vh-100" style="background-color: #E8E8E8; padding-bottom: 30px;">
+    <div class="container py-5 h-100" >
+      <div class="row d-flex justify-content-center align-items-center h-100" >
+        <div class="col col-xl-10" style="margin-left:20%" >
+          <div class="card" style="border-radius: 1rem;width: 80%;" >
+            <div class="row g-0" style=" height:450px;">
+              <div class="col-md-6 col-lg-5 d-none d-md-block"  >
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                  alt="login form" class="img-fluid " style="border-radius: 1rem 0 0 1rem; height:100% ;padding-right:50px" />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+  
+                  <form>
+                    Title:<input type="text" name="title" ><br><br>
+
+                    Details:<input type="text" name="desc" ><br><br>
+                    
+                        <button type='submit'>Submit</button>
+  
+                   
+                  </form>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% comment %} {{form.as_p}}
+
+<button type="submit">submit</button> {% endcomment %}
+</form>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+{% endblock content %}

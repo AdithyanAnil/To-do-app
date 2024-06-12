@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image-->
+        <img class="masthead-avatar mb-5" src="{% static 'assets/img/avataaars.svg' %}" alt="..." />
+        <!-- Masthead Heading-->
+         <h2 class="masthead-subheading font-weight-light mb-0">Hello,Welcome</h2>
+         {% if user.is_authenticated %}
+        <h1 class="masthead-heading text-uppercase mb-0">{{user}}</h1>
+        {% else %}
+        <h2 class="masthead-subheading font-weight-light mb-0">Please login to create or view list</h2>
+        {% endif %}
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">Create your own To Do List, {{user}}</p>
+        
+    </div>
+</header>
+{% endblock content %}
