@@ -4,19 +4,31 @@ from.forms import CreateForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate ,login as authlogin,logout as authlogout
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+
+
+
+# @login_required(login_url='login/')
 
 # Create your views here.
 def home(request):
     return render(request,'home.html')
+
+
+
+@login_required(login_url='login/')
+
+   
 def create(request):
-    # frm=CreateForm()
-    if request.POST:
-        form=CreateForm(request.POST)
-        if form.is_valid :
-            form.save()
-    else:
-        form=CreateForm()
-    return render(request,"create.html",{'form':form})
+        # frm=CreateForm()
+        if request.POST:
+            form=CreateForm(request.POST)
+            if form.is_valid :
+                form.save()
+        else:
+            form=CreateForm()
+        return render(request,"create.html",{'form':form})
+
     
 def list(request):
     list=Create.objects.all()

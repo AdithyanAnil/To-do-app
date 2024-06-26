@@ -3,6 +3,11 @@
 {% block content %}
 
 <header class="masthead bg-primary text-white text-center">
+    {% for message in messages %}
+        <script>
+            alert('{{message}}');
+        </script>
+        {% endfor %}
     <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image-->
         <img class="masthead-avatar mb-5" src="{% static 'assets/img/avataaars.svg' %}" alt="..." />
